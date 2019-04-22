@@ -41,6 +41,12 @@ public class CameraController : MonoBehaviour {
         transform.localEulerAngles = new Vector3(0, rotationY, 0);
 
         cam.transform.localEulerAngles = new Vector3(-rotationX, rotationY, 0);
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     void LateUpdate()
