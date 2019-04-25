@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -13,18 +14,26 @@ public class PlayerController : MonoBehaviour {
     Rigidbody rb;
     Vector3 moveDirection;
     CapsuleCollider col;
+    Camera cam;
 
+    Text messageText;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
+
+        cam = Camera.main;
+
+        messageText = GameObject.Find("Canvas/MessageText").GetComponent<Text>();
     }
 
 
 
     void Update () {
+        CheckInteraction();
+        
         //Get directional input from the user
         float horizontalMovement = 0;
         float verticalMovement = 0;
@@ -63,8 +72,8 @@ public class PlayerController : MonoBehaviour {
     {
         float distanceToPoints = col.height / 2 - col.radius;
 
-        Vector3 point1 = col.center + Vector3.up * distanceToPoints;
-        Vector3 point2 = col.center - Vector3.up * distanceToPoints;
+        Vector3 point1 = transform.position + col.center + Vector3.up * distanceToPoints;
+        Vector3 point2 = transform.position + col.center - Vector3.up * distanceToPoints;
 
         float radius = col.radius * 0.95f;
         float castDistance = 0.5f;
@@ -80,6 +89,27 @@ public class PlayerController : MonoBehaviour {
         }
 
         return true;
+    }
+
+
+
+    void CheckInteraction()
+    {
+        messageText.text = "";
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 4f))
+        {
+            if (hit.transform.tag == "Door")
+            {
+                messageText.text = "Press E to open";
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.transform.gameObject.GetComponent<doorOpen>().enabled = true;
+                }
+            }
+        }
     }
 
 }
