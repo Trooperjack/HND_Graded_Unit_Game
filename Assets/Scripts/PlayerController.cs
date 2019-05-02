@@ -6,15 +6,20 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 
     //https://www.mvcode.com/lessons/first-person-camera-and-controller-jamie
+    //https://unity3d.com/learn/tutorials/projects/lets-try-assignments/lets-try-shooting-raycasts-article
 
     //Public variables
     public float walkSpeed;
+    public Transform gunTip;
 
     //Private variables
     Rigidbody rb;
     Vector3 moveDirection;
     CapsuleCollider col;
     Camera cam;
+    LineRenderer bulletLine;
+
+    private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
 
     Text messageText;
 
@@ -23,6 +28,7 @@ public class PlayerController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
+        bulletLine = GetComponent<LineRenderer>();
 
         cam = Camera.main;
 
@@ -33,7 +39,11 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
         CheckInteraction();
-        
+        Shoot();
+
+        Vector3 lineOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+        Debug.DrawRay(lineOrigin, cam.transform.forward * 1000f, Color.green);
+
         //Get directional input from the user
         float horizontalMovement = 0;
         float verticalMovement = 0;
@@ -111,5 +121,46 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
+
+
+
+
+    void Shoot()
+    {
+        //bulletLine.enabled = false;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+
+            //bulletLine.enabled = true;
+            StartCoroutine(ShotEffect());
+            Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+            bulletLine.SetPosition(0, gunTip.transform.position);
+
+            RaycastHit hit;
+            if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, 1000))
+            {
+                bulletLine.SetPosition(1, hit.point);
+            }
+            else
+            {
+                bulletLine.SetPosition(1, rayOrigin + (1000f * cam.transform.forward));
+            }
+        }
+
+    }
+
+
+    private IEnumerator ShotEffect()
+    {
+        bulletLine.enabled = true;
+
+        yield return shotDuration;
+
+        bulletLine.enabled = false;
+
+    }
+
+
 
 }
