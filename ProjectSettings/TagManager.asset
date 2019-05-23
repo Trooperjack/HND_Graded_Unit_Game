@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Wall
   - Door
+  - LightAmmoPickup
+  - MediumAmmoPickup
+  - LargeAmmoPickup
+  - LightHealthPickup
+  - MediumHealthPickup
+  - LargeHealthPickup
   layers:
   - Default
   - TransparentFX

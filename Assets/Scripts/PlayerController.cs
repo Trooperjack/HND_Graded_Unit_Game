@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour {
     public float hitForce = 100f;
 
     public int startingHealth = 100;
+    public int maxHealth = 100;
     public int currentHealth;
+    public bool isDead;
 
     public int startingMagazine = 10;
     public int maxMagazine = 10;
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour {
         ammoText = GameObject.Find("Canvas/AmmoText").GetComponent<Text>();
         reloadText = GameObject.Find("Canvas/ReloadText").GetComponent<Text>();
 
+        isDead = false;
         shotsFired = 0;
         currentHealth = startingHealth;
         currentMagazine = startingMagazine;
@@ -111,6 +114,24 @@ public class PlayerController : MonoBehaviour {
         if (currentAmmo <= 0 && currentMagazine <= 0)
         {
             isEmpty = true;
+        }
+        if (currentAmmo > maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+        }
+        if (currentMagazine > maxMagazine)
+        {
+            currentMagazine = maxMagazine;
+        }
+
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+            isDead = true;
+        }
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
         }
 
         Vector3 lineOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
@@ -263,6 +284,76 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
+
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        //Ammo Pickups
+        //Light Ammo
+        if (other.gameObject.CompareTag("LightAmmoPickup") && currentAmmo < maxAmmo)
+        {
+            other.gameObject.SetActive(false);
+            float a;
+            int b;
+            a = currentAmmo + ((maxAmmo / 100) * 20);
+            b = Mathf.RoundToInt(a);
+            currentAmmo = currentAmmo + b;
+        }
+        //Medium Ammo
+        if (other.gameObject.CompareTag("MediumAmmoPickup") && currentAmmo < maxAmmo)
+        {
+            other.gameObject.SetActive(false);
+            float a;
+            int b;
+            a = currentAmmo + ((maxAmmo / 100) * 40);
+            b = Mathf.RoundToInt(a);
+            currentAmmo = currentAmmo + b;
+        }
+        //Large Ammo
+        if (other.gameObject.CompareTag("LargeAmmoPickup") && currentAmmo < maxAmmo)
+        {
+            other.gameObject.SetActive(false);
+            float a;
+            int b;
+            a = currentAmmo + ((maxAmmo / 100) * 60);
+            b = Mathf.RoundToInt(a);
+            currentAmmo = currentAmmo + b;
+        }
+
+        //Health Pickups
+        //Light Health
+        if (other.gameObject.CompareTag("LightHealthPickup") && currentHealth < maxHealth)
+        {
+            other.gameObject.SetActive(false);
+            float a;
+            int b;
+            a = currentHealth + ((maxHealth / 100) * 20);
+            b = Mathf.RoundToInt(a);
+            currentHealth = currentHealth + b;
+        }
+        //Medium Health
+        if (other.gameObject.CompareTag("MediumHealthPickup") && currentHealth < maxHealth)
+        {
+            other.gameObject.SetActive(false);
+            float a;
+            int b;
+            a = currentHealth + ((maxHealth / 100) * 50);
+            b = Mathf.RoundToInt(a);
+            currentHealth = currentHealth + b;
+        }
+        //Large Health
+        if (other.gameObject.CompareTag("LargeHealthPickup") && currentHealth < maxHealth)
+        {
+            other.gameObject.SetActive(false);
+            float a;
+            int b;
+            a = currentHealth + ((maxHealth / 100) * 80);
+            b = Mathf.RoundToInt(a);
+            currentHealth = currentHealth + b;
+        }
+    }
+
 
 
     private IEnumerator ReloadDelay()
