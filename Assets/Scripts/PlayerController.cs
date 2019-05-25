@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     public float walkSpeed;
     public Transform gunTip;
 
-    public int gunDamage = 1;
+    public int gunDamage = 43;
     public float fireRate = .25f;
     public float weaponRange = 50f;
     public float hitForce = 100f;
@@ -235,12 +235,18 @@ public class PlayerController : MonoBehaviour {
             {
                 bulletLine.SetPosition(1, hit.point);
                 ShootableBox health = hit.collider.GetComponent<ShootableBox>();
-
+				EnemyController enemyHealth = hit.collider.GetComponent<EnemyController>();
+				
                 if (health != null)
                 {
                     health.Damage(gunDamage);
                 }
 
+				if (enemyHealth != null)
+                {
+                    enemyHealth.Damage(gunDamage);
+                }
+				
                 if (hit.rigidbody != null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * hitForce);

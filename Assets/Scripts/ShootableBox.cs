@@ -6,7 +6,7 @@ public class ShootableBox : MonoBehaviour {
 
 
 
-    public int currentHealth = 3;
+    public int currentHealth = 100;
     public void Damage(int damageAmount)
     {
         currentHealth -= damageAmount;

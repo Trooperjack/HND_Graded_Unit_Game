@@ -12,6 +12,7 @@ TagManager:
   - LightHealthPickup
   - MediumHealthPickup
   - LargeHealthPickup
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: a19c20e3249b4644085b9d62627b9755, type: 2}
 --- !u!1 &4916873
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,8 +128,8 @@ GameObject:
   m_Name: castle_wall_4x4 (15)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &4916874
 Transform:
@@ -213,8 +213,8 @@ GameObject:
   m_Name: castle_wall_4x4 (42)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &17757556
 Transform:
@@ -328,8 +328,8 @@ GameObject:
   m_Name: castle_wall_4x4 (37)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &22933792
 Transform:
@@ -413,8 +413,8 @@ GameObject:
   m_Name: castle_wall_4x2 (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &59438836
 Transform:
@@ -483,6 +483,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 59438835}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &62228370
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 238.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 239.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &71149629
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,8 +544,8 @@ GameObject:
   m_Name: stone_fence (10)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &71149630
 Transform:
@@ -637,8 +683,8 @@ GameObject:
   m_Name: castle_wall_4x4 (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &108551694
 Transform:
@@ -722,8 +768,8 @@ GameObject:
   m_Name: castle_wall_4x4 (67)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &123061917
 Transform:
@@ -807,8 +853,8 @@ GameObject:
   m_Name: castle_wall_4x4 (43)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &123903810
 Transform:
@@ -892,8 +938,8 @@ GameObject:
   m_Name: castle_wall_4x4 (72)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &143300257
 Transform:
@@ -977,8 +1023,8 @@ GameObject:
   m_Name: castle_wall_4x4 (12)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &152525784
 Transform:
@@ -1062,8 +1108,8 @@ GameObject:
   m_Name: castle_wall_4x4 (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &164180943
 Transform:
@@ -1213,8 +1259,8 @@ GameObject:
   m_Name: castle_wall_4x4
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &180961982
 Transform:
@@ -1298,8 +1344,8 @@ GameObject:
   m_Name: castle_wall_4x4 (47)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &196890731
 Transform:
@@ -1383,8 +1429,8 @@ GameObject:
   m_Name: castle_wall_4x4 (30)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &200969360
 Transform:
@@ -1468,8 +1514,8 @@ GameObject:
   m_Name: stone_fence (9)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &218895910
 Transform:
@@ -1538,6 +1584,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 218895909}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &222216975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222216976}
+  m_Layer: 0
+  m_Name: Enemy Spawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222216976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 222216975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 259.34, y: 3.11, z: 206.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &226757295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1716,80 @@ Transform:
   m_Father: {fileID: 2113268159}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &278949355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278949356}
+  m_Layer: 0
+  m_Name: Enemy Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278949356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 278949355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 236.6, y: 3.11, z: 206.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &291676536
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 241.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 239.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &306661312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,8 +1874,8 @@ GameObject:
   m_Name: stone_fence
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &311031508
 Transform:
@@ -1853,8 +2001,8 @@ GameObject:
   m_Name: stone_fence (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &363191954
 Transform:
@@ -1938,8 +2086,8 @@ GameObject:
   m_Name: castle_wall_4x4 (60)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &370056119
 Transform:
@@ -2064,8 +2212,8 @@ GameObject:
   m_Name: castle_wall_4x4 (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &391227742
 Transform:
@@ -2149,8 +2297,8 @@ GameObject:
   m_Name: castle_wall_4x2 (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &401902028
 Transform:
@@ -2234,8 +2382,8 @@ GameObject:
   m_Name: stone_fence (12)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &423010137
 Transform:
@@ -2319,8 +2467,8 @@ GameObject:
   m_Name: castle_ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &424224394
 Transform:
@@ -2404,8 +2552,8 @@ GameObject:
   m_Name: castle_wall_4x4 (62)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &429994098
 Transform:
@@ -2489,8 +2637,8 @@ GameObject:
   m_Name: castle_wall_4x4 (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &443586474
 Transform:
@@ -2559,6 +2707,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 443586473}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &468263879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468263880}
+  m_Layer: 0
+  m_Name: Enemy Spawn (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &468263880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468263879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 203.4, y: 3.11, z: 240}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &481331108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,8 +2750,8 @@ GameObject:
   m_Name: castle_wall_4x4 (36)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &481331109
 Transform:
@@ -2644,6 +2820,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481331108}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &482912483
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &494624472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2941,52 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494624472}
   m_CullTransparentMesh: 0
+--- !u!1001 &499372379
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 265.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 260.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &499902451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,8 +3002,8 @@ GameObject:
   m_Name: castle_wall_4x4 (65)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &499902452
 Transform:
@@ -2939,8 +3207,8 @@ GameObject:
   m_Name: castle_wall_4x4 (54)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &538670053
 Transform:
@@ -3024,8 +3292,8 @@ GameObject:
   m_Name: castle_wall_4x4 (58)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &541968178
 Transform:
@@ -3109,8 +3377,8 @@ GameObject:
   m_Name: stone_fence (8)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &544052356
 Transform:
@@ -3194,8 +3462,8 @@ GameObject:
   m_Name: castle_tower
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &552942312
 Transform:
@@ -3365,8 +3633,8 @@ GameObject:
   m_Name: castle_wall_4x4 (13)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &582558534
 Transform:
@@ -3496,8 +3764,8 @@ GameObject:
   m_Name: castle_wall_4x4 (56)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &608899652
 Transform:
@@ -3581,8 +3849,8 @@ GameObject:
   m_Name: castle_wall_4x4 (73)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &617425739
 Transform:
@@ -3666,8 +3934,8 @@ GameObject:
   m_Name: castle_wall_4x4 (53)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &619309414
 Transform:
@@ -3751,8 +4019,8 @@ GameObject:
   m_Name: stone_fence (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &652527198
 Transform:
@@ -3836,8 +4104,8 @@ GameObject:
   m_Name: castle_wall_4x4 (9)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &667340753
 Transform:
@@ -3921,8 +4189,8 @@ GameObject:
   m_Name: castle_wall_4x4 (27)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &689209290
 Transform:
@@ -4006,8 +4274,8 @@ GameObject:
   m_Name: castle_wall_4x4 (49)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &705200357
 Transform:
@@ -4076,6 +4344,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 705200356}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &719360248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719360249}
+  m_Layer: 0
+  m_Name: Level Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &719360249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 719360248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 210.25719, y: 7.9635344, z: 244.62119}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &730449847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4091,8 +4387,8 @@ GameObject:
   m_Name: castle_wall_4x4 (45)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &730449848
 Transform:
@@ -4176,8 +4472,8 @@ GameObject:
   m_Name: castle_wall_4x2 (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &731712828
 Transform:
@@ -4323,8 +4619,8 @@ GameObject:
   m_Name: castle_wall_4x4 (51)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &774469305
 Transform:
@@ -4408,8 +4704,8 @@ GameObject:
   m_Name: castle_wall_4x4 (68)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &778610669
 Transform:
@@ -4593,8 +4889,8 @@ GameObject:
   m_Name: castle_wall_4x4 (40)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &802110634
 Transform:
@@ -4678,8 +4974,8 @@ GameObject:
   m_Name: castle_wall_4x4 (21)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &812980201
 Transform:
@@ -4763,8 +5059,8 @@ GameObject:
   m_Name: castle_wall_4x4 (59)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &822041576
 Transform:
@@ -4833,6 +5129,57 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822041575}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &827632447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827632449}
+  - component: {fileID: 827632448}
+  m_Layer: 0
+  m_Name: Enemy Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &827632448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827632447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae32836c54922d42b04999670bcd716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1599385486}
+  LightRifleman: {fileID: 1853560806183332, guid: 72c5ceb995dea16478348cea2d78b130,
+    type: 2}
+  spawnTime: 3
+  spawnPoints:
+  - {fileID: 278949356}
+  - {fileID: 222216976}
+  - {fileID: 1595618353}
+  - {fileID: 1562347842}
+  - {fileID: 1000658160}
+  - {fileID: 468263880}
+--- !u!4 &827632449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827632447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 241.88, y: 3.4, z: 223.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &856056731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,8 +5270,8 @@ GameObject:
   m_Name: castle_wall_4x4 (34)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &860398156
 Transform:
@@ -5008,8 +5355,8 @@ GameObject:
   m_Name: stone_fence (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &879756592
 Transform:
@@ -5093,8 +5440,8 @@ GameObject:
   m_Name: castle_wall_4x4 (66)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &929965774
 Transform:
@@ -5178,8 +5525,8 @@ GameObject:
   m_Name: castle_wall_4x4 (28)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &978568502
 Transform:
@@ -5290,6 +5637,34 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bcd34e70f8741142b2924ee350ca25c, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1000658159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000658160}
+  m_Layer: 0
+  m_Name: Enemy Spawn (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1000658160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1000658159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 200.5, y: 3.11, z: 269.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002749704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,8 +5680,8 @@ GameObject:
   m_Name: castle_wall_4x2 (9)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1002749705
 Transform:
@@ -5390,8 +5765,8 @@ GameObject:
   m_Name: castle_wall_4x4 (39)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1011099271
 Transform:
@@ -5475,8 +5850,8 @@ GameObject:
   m_Name: castle_wall_4x2 (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1015733670
 Transform:
@@ -5560,8 +5935,8 @@ GameObject:
   m_Name: castle_wall_4x4 (71)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1028819166
 Transform:
@@ -5646,7 +6021,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!65 &1034496782
 BoxCollider:
@@ -5715,6 +6090,52 @@ Transform:
   m_Father: {fileID: 267886028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1064232980
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 217.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 237.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1070725952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,8 +6151,8 @@ GameObject:
   m_Name: castle_wall_4x4 (70)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1070725953
 Transform:
@@ -5815,8 +6236,8 @@ GameObject:
   m_Name: castle_wall_4x4 (11)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1087746055
 Transform:
@@ -5988,8 +6409,8 @@ GameObject:
   m_Name: castle_wall_4x4 (50)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1103231865
 Transform:
@@ -6073,8 +6494,8 @@ GameObject:
   m_Name: castle_wall_4x4 (26)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1136351569
 Transform:
@@ -6233,8 +6654,8 @@ GameObject:
   m_Name: castle_wall_4x4 (46)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1164472415
 Transform:
@@ -6318,8 +6739,8 @@ GameObject:
   m_Name: castle_wall_4x4 (32)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1172724106
 Transform:
@@ -6403,8 +6824,8 @@ GameObject:
   m_Name: castle_wall_4x4 (57)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1182458386
 Transform:
@@ -6488,8 +6909,8 @@ GameObject:
   m_Name: castle_wall_4x4 (18)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1188633423
 Transform:
@@ -6658,8 +7079,8 @@ GameObject:
   m_Name: castle_wall_4x4 (20)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1205438675
 Transform:
@@ -6743,8 +7164,8 @@ GameObject:
   m_Name: castle_wall_4x2 (11)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1243085073
 Transform:
@@ -6828,8 +7249,8 @@ GameObject:
   m_Name: castle_wall_4x4 (29)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1292822285
 Transform:
@@ -6913,8 +7334,8 @@ GameObject:
   m_Name: castle_wall_4x4 (14)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1306311790
 Transform:
@@ -7028,8 +7449,8 @@ GameObject:
   m_Name: stone_fence (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1339057511
 Transform:
@@ -7113,8 +7534,8 @@ GameObject:
   m_Name: castle_wall_4x4 (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1365110501
 Transform:
@@ -7315,8 +7736,8 @@ GameObject:
   m_Name: stone_fence (11)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1373744137
 Transform:
@@ -7427,6 +7848,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6d98747a62c9b142b5e2b7745d5e427, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &1451513082
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 250.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 222.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720050292302448, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 72c5ceb995dea16478348cea2d78b130, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1470211382
 GameObject:
   m_ObjectHideFlags: 0
@@ -7442,8 +7905,8 @@ GameObject:
   m_Name: castle_wall_4x4 (38)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1470211383
 Transform:
@@ -7527,8 +7990,8 @@ GameObject:
   m_Name: castle_wall_4x4 (52)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1473407843
 Transform:
@@ -7612,8 +8075,8 @@ GameObject:
   m_Name: castle_wall_4x4 (19)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1484506039
 Transform:
@@ -7782,8 +8245,8 @@ GameObject:
   m_Name: castle_wall_4x2 (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1499055335
 Transform:
@@ -7867,8 +8330,8 @@ GameObject:
   m_Name: castle_centre
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1501519035
 Transform:
@@ -7952,8 +8415,8 @@ GameObject:
   m_Name: castle_wall_4x4 (61)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1536665802
 Transform:
@@ -8022,6 +8485,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1536665801}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1562347841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562347842}
+  m_Layer: 0
+  m_Name: Enemy Spawn (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1562347842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1562347841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 288.09, y: 3.11, z: 257.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576233012
 GameObject:
   m_ObjectHideFlags: 0
@@ -8037,8 +8528,8 @@ GameObject:
   m_Name: castle_wall_4x4 (33)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1576233013
 Transform:
@@ -8200,7 +8691,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 250
+      value: 230.36
       objectReference: {fileID: 0}
     - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8208,7 +8699,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 230
+      value: 228.76
       objectReference: {fileID: 0}
     - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8233,6 +8724,34 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1595618352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595618353}
+  m_Layer: 0
+  m_Name: Enemy Spawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1595618353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595618352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 288.27, y: 3.11, z: 243.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1597975829
 GameObject:
   m_ObjectHideFlags: 0
@@ -8248,8 +8767,8 @@ GameObject:
   m_Name: castle_wall_4x4 (63)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1597975830
 Transform:
@@ -8333,7 +8852,7 @@ GameObject:
   - component: {fileID: 1599385490}
   m_Layer: 0
   m_Name: PlayerCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8364,7 +8883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1000
   gunTip: {fileID: 375042757}
-  gunDamage: 1
+  gunDamage: 38
   fireRate: 0.25
   weaponRange: 50
   hitForce: 100
@@ -8536,8 +9055,8 @@ GameObject:
   m_Name: castle_tower (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1637502082
 Transform:
@@ -8622,8 +9141,8 @@ GameObject:
   m_Name: castle_wall_4x2
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1657217292
 Transform:
@@ -8707,8 +9226,8 @@ GameObject:
   m_Name: castle_wall_4x2 (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1685191367
 Transform:
@@ -8869,8 +9388,8 @@ GameObject:
   m_Name: castle_wall_4x4 (41)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1692348059
 Transform:
@@ -8954,8 +9473,8 @@ GameObject:
   m_Name: castle_wall_4x4 (35)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1771709020
 Transform:
@@ -9068,8 +9587,8 @@ GameObject:
   m_Name: castle_wall_4x4 (55)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1856062799
 Transform:
@@ -9153,8 +9672,8 @@ GameObject:
   m_Name: castle_wall_4x4 (44)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1857338878
 Transform:
@@ -9238,8 +9757,8 @@ GameObject:
   m_Name: castle_wall_4x4 (48)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1858430909
 Transform:
@@ -9323,8 +9842,8 @@ GameObject:
   m_Name: castle_wall_4x4 (23)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1861451334
 Transform:
@@ -9408,8 +9927,8 @@ GameObject:
   m_Name: stone_fence (13)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1875693210
 Transform:
@@ -9493,8 +10012,8 @@ GameObject:
   m_Name: castle_wall_4x4 (25)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1895234531
 Transform:
@@ -9578,8 +10097,8 @@ GameObject:
   m_Name: castle_wall_4x4 (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1895631847
 Transform:
@@ -9663,8 +10182,8 @@ GameObject:
   m_Name: castle_wall_4x4 (69)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1921712268
 Transform:
@@ -9733,6 +10252,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921712267}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1930492032
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 212.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 260.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1932497448
 GameObject:
   m_ObjectHideFlags: 0
@@ -9748,8 +10313,8 @@ GameObject:
   m_Name: castle_wall_4x4 (10)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1932497449
 Transform:
@@ -10022,8 +10587,8 @@ GameObject:
   m_Name: stone_fence (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1958378332
 Transform:
@@ -10107,8 +10672,8 @@ GameObject:
   m_Name: castle_wall_4x2 (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1968208016
 Transform:
@@ -10192,8 +10757,8 @@ GameObject:
   m_Name: castle_wall_4x2 (6)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1982434500
 Transform:
@@ -10277,8 +10842,8 @@ GameObject:
   m_Name: castle_wall_4x4 (64)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1987535970
 Transform:
@@ -10362,8 +10927,8 @@ GameObject:
   m_Name: castle_wall_4x2 (10)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1993677673
 Transform:
@@ -10432,6 +10997,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1993677672}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2006295832
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 265.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 242.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097829743736342, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969412700057780, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+      propertyPath: m_Name
+      value: Pickup Spawn (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a029173e87bb5b4b8e250765f51928a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2006698770
 GameObject:
   m_ObjectHideFlags: 0
@@ -10447,8 +11058,8 @@ GameObject:
   m_Name: castle_wall_4x4 (22)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2006698771
 Transform:
@@ -10532,8 +11143,8 @@ GameObject:
   m_Name: castle_wall_4x4 (16)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2024074227
 Transform:
@@ -10617,8 +11228,8 @@ GameObject:
   m_Name: castle_wall_4x4 (4)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2026271760
 Transform:
@@ -10702,8 +11313,8 @@ GameObject:
   m_Name: stone_fence (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2029346623
 Transform:
@@ -10787,8 +11398,8 @@ GameObject:
   m_Name: castle_wall_4x4 (74)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2033153491
 Transform:
@@ -10872,8 +11483,8 @@ GameObject:
   m_Name: castle_wall_4x4 (24)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2036192538
 Transform:
@@ -10957,8 +11568,8 @@ GameObject:
   m_Name: castle_wall_4x4 (75)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2038010511
 Transform:
@@ -11128,8 +11739,8 @@ GameObject:
   m_Name: stone_fence (7)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2083585387
 Transform:
@@ -11213,8 +11824,8 @@ GameObject:
   m_Name: castle_wall_4x4 (5)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2090718908
 Transform:
@@ -11298,8 +11909,8 @@ GameObject:
   m_Name: castle_wall_4x4 (31)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2102797205
 Transform:
@@ -11416,8 +12027,8 @@ GameObject:
   m_Name: castle_wall_4x4 (17)
   m_TagString: Wall
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2126836208
 Transform:
