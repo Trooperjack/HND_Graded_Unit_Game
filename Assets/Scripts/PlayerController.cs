@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
     public bool isReloading;
     public bool isEmpty;
     public bool canFire;
-
+	
     //Private variables
     Rigidbody rb;
     Vector3 moveDirection;
@@ -78,9 +78,13 @@ public class PlayerController : MonoBehaviour {
 
 
     void Update () {
-        CheckInteraction();
-        CheckReloadText();
-        Shoot();
+		
+		if (!isDead)
+		{
+			CheckInteraction();
+			CheckReloadText();
+			Shoot();
+		}
         
         shootingText.text = "" + shotsFired;
         healthText.text = "" + currentHealth;
@@ -123,12 +127,6 @@ public class PlayerController : MonoBehaviour {
         {
             currentMagazine = maxMagazine;
         }
-
-        if (currentHealth < 0)
-        {
-            currentHealth = 0;
-            isDead = true;
-        }
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
@@ -141,12 +139,12 @@ public class PlayerController : MonoBehaviour {
         float horizontalMovement = 0;
         float verticalMovement = 0;
 
-        if (CanMove(transform.right * Input.GetAxisRaw("Horizontal")))
+        if (CanMove(transform.right * Input.GetAxisRaw("Horizontal")) && !isDead)
         {
             horizontalMovement = Input.GetAxisRaw("Horizontal");
         }
 
-        if (CanMove(transform.forward * Input.GetAxisRaw("Vertical")))
+        if (CanMove(transform.forward * Input.GetAxisRaw("Vertical")) && !isDead)
         {
             verticalMovement = Input.GetAxisRaw("Vertical");
         }
@@ -220,7 +218,7 @@ public class PlayerController : MonoBehaviour {
     void Shoot()
     {
 
-        if (Input.GetButton("Fire1") && Time.time > nextFire && canFire == true && !isReloading && currentMagazine > 0)
+        if (Input.GetButton("Fire1") && Time.time > nextFire && canFire == true && !isDead && !isReloading && currentMagazine > 0)
         {
             shotsFired++;
             currentMagazine--;
@@ -294,7 +292,7 @@ public class PlayerController : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider other)
-    {
+    {		
         //Ammo Pickups
         //Light Ammo
         if (other.gameObject.CompareTag("LightAmmoPickup") && currentAmmo < maxAmmo)
@@ -360,8 +358,31 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+	
+	//On any Physicall Object Hits the player
+	void OnCollisionEnter(Collision other)
+	{
+		//Damaged
+		if (other.gameObject.CompareTag("Projectile") && !isDead)
+		{
+			onDamaged();
+		}
+	}
+	
 
+	//When the player is damaged
+	void onDamaged()
+	{
+		currentHealth = currentHealth - 10;
+		if (currentHealth <= 0)
+		{
+			isDead = true;
+		}
 
+	}
+	
+
+	//Reload player's weapon
     private IEnumerator ReloadDelay()
     {
         yield return new WaitForSeconds(3);

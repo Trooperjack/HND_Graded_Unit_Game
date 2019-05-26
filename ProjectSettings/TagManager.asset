@@ -15,6 +15,8 @@ TagManager:
   - Enemy
   - Trigger Target
   - Level Manager
+  - DefendArea
+  - Projectile
   layers:
   - Default
   - TransparentFX

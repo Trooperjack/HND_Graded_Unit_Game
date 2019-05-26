@@ -11,11 +11,14 @@ public class EnemyController : MonoBehaviour {
 	public bool isDead;
 	
 	public int damage = 38;
+	public float fireRate = .25f;
 	
 	public int startingMagazine = 10;
 	public int maxMagazine = 10;
 	public int currentMagazine;
 	public int reloadTime = 3;
+	public bool isReloading;
+    public bool canFire;
 	
 	public int score = 100;
 	public int dropChance = 20;
@@ -28,10 +31,10 @@ public class EnemyController : MonoBehaviour {
 	public GameObject medHealth;
 	public GameObject largeHealth;
 	
-	//private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
+	private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
     private float nextFire;
-    private int shotsFired;
 
+	public GameObject projectile;
 	public Transform playerTransform;
 	public Transform triggerTarget;
 	PlayerController player;
@@ -43,7 +46,7 @@ public class EnemyController : MonoBehaviour {
 		player = playerTransform.GetComponent<PlayerController>();
 		nav = GetComponent<NavMeshAgent>();
 		
-		triggerTarget = GameObject.FindGameObjectWithTag("Trigger Target").transform;
+		//triggerTarget = GameObject.FindGameObjectWithTag("Trigger Target").transform;
 		
 		isDead = false;
         currentHealth = startingHealth;
@@ -54,9 +57,44 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		if (playerTransform != null)
+		{
+			transform.LookAt(playerTransform);
+		}
+		
+		Shoot();
+		
+		if (currentMagazine != 0 && isReloading == false)
+        {
+            canFire = true;
+        }
+
+        if (!isReloading && currentMagazine < maxMagazine)
+        {
+            isReloading = true;
+            StartCoroutine(ReloadDelay());
+        }
+
+        if (currentMagazine < 0)
+        {
+            currentMagazine = 0;
+            canFire = false;
+        }
+		
+		
+		bool doseDefendAreaExist = GameObject.FindGameObjectWithTag("Trigger Target");
+		
 		if (!isDead && player.isDead == false)
 		{
-			nav.SetDestination(triggerTarget.position);
+			if (doseDefendAreaExist == true)
+			{
+				triggerTarget = GameObject.FindGameObjectWithTag("Trigger Target").transform;
+				nav.SetDestination(triggerTarget.position);
+			}
+			else
+			{
+				nav.SetDestination(playerTransform.position);
+			}
 		}
 		else
 		{
@@ -65,6 +103,30 @@ public class EnemyController : MonoBehaviour {
 		
 		
 	}
+	
+	
+	
+	
+	void Shoot()
+	{
+		if (Time.time > nextFire && canFire == true && !isReloading && currentMagazine > 0)
+		{
+			currentMagazine--;
+			nextFire = Time.time + fireRate;
+			GameObject bullet = Instantiate(projectile, transform.position + transform.forward * 2, Quaternion.identity) as GameObject;
+			Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(),bullet.GetComponent<SphereCollider>());
+			bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+		}
+	}
+	
+	private IEnumerator ReloadDelay()
+    {
+        yield return new WaitForSeconds(3);
+		currentMagazine = maxMagazine;
+        isReloading = false;
+        canFire = true;
+    }
+	
 	
 	
 	public void Damage(int damageAmount)

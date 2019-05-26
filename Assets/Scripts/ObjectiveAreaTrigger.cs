@@ -70,6 +70,8 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 			Debug.Log("OBJECTIVE CAPTURED BY THE ENEMY!");
 			isCaptured = true;
 			isActive = false;
+			levelManager.onArea1Complete();
+			Destroy(gameObject);
 		}
 	}
 	
@@ -80,7 +82,7 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 		//Debug.Log("Area Time Left: " + areaTimer.ToString());
 		if (areaTimer < 0)
 		{
-			Debug.Log("OBJECTIVE CAPTURED BY THE ENEMY!");
+			Debug.Log("OBJECTIVE SUCCESSFULLY DEFENDED!");
 			isDefended = true;
 			isActive = false;
 		}
