@@ -21,6 +21,8 @@ TagManager:
   - SniperSpawnsA
   - SniperSpawnsB
   - SniperSpawnsC
+  - Ammo Box
+  - Sniper
   layers:
   - Default
   - TransparentFX

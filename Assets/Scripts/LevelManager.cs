@@ -32,9 +32,11 @@ public class LevelManager : MonoBehaviour {
 	public int area2;
 	public int area3;
 	
+	private float startDelay = 1f;
 	
-	void Awake () {
-		
+	
+	void Awake()
+	{
 		SniperGroupA = GameObject.FindGameObjectWithTag("SniperSpawnsA");
 		SniperGroupB = GameObject.FindGameObjectWithTag("SniperSpawnsB");
 		SniperGroupC = GameObject.FindGameObjectWithTag("SniperSpawnsC");
@@ -45,7 +47,6 @@ public class LevelManager : MonoBehaviour {
 		enemyManager = GameObject.FindGameObjectWithTag("Enemy Manager");
 		enemySpawningScript = enemyManager.GetComponent<EnemySpawning>();
 		
-		Destroy(AreaDoors[0]);
 		defendAreaObjectiveActive = false;
 		
 		DefendAreaLocated = false; //1
@@ -58,6 +59,12 @@ public class LevelManager : MonoBehaviour {
 		area1 = Random.Range(1,4);
 		area2 = Random.Range(1,4);
 		area3 = Random.Range(1,4);
+	}
+	
+	
+	void DelayedStart () {
+		
+		Destroy(AreaDoors[0]);
 		
 		while(Area1Done == false)
 		{
@@ -89,6 +96,12 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
+		startDelay -= Time.deltaTime;
+		if (startDelay < 0)
+		{
+			DelayedStart();
+		}
 		
 	}
 	

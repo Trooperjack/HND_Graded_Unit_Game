@@ -209,6 +209,15 @@ public class PlayerController : MonoBehaviour {
                     hit.transform.gameObject.GetComponent<doorOpen>().enabled = true;
                 }
             }
+			
+			if (hit.transform.tag == "Ammo Box")
+			{
+				messageText.text = "Press E to refill Ammo";
+				if (Input.GetKeyDown(KeyCode.E))
+                {
+                    currentAmmo = maxAmmo;
+                }
+            }
         }
     }
 
@@ -234,6 +243,7 @@ public class PlayerController : MonoBehaviour {
                 bulletLine.SetPosition(1, hit.point);
                 ShootableBox health = hit.collider.GetComponent<ShootableBox>();
 				EnemyController enemyHealth = hit.collider.GetComponent<EnemyController>();
+				EnemySniperController enemySniperHealth = hit.collider.GetComponent<EnemySniperController>();
 				
                 if (health != null)
                 {
@@ -243,6 +253,11 @@ public class PlayerController : MonoBehaviour {
 				if (enemyHealth != null)
                 {
                     enemyHealth.Damage(gunDamage);
+                }
+				
+				if (enemySniperHealth != null)
+                {
+                    enemySniperHealth.Damage(gunDamage);
                 }
 				
                 if (hit.rigidbody != null)

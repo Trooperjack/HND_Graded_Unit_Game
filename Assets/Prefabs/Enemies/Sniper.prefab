@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114010006843271662}
   m_Layer: 0
   m_Name: Sniper
-  m_TagString: Untagged
+  m_TagString: Sniper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   isReloading: 0
   canFire: 0
   score: 100
-  projectile: {fileID: 0}
+  projectile: {fileID: 1359971363220476, guid: 677834b9a32770341af344107ef4c377, type: 2}
   playerTransform: {fileID: 0}
   triggerTarget: {fileID: 0}
   enemyManager: {fileID: 0}
