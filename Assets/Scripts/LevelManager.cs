@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
-	public PlayerController player;
+	public GameObject playerObject;
+	PlayerController player;
+	
+	
+	public GameObject[] AreaDoors;
 
-	// Use this for initialization
-	void Start () {
+	
+	
+	
+	
+	void Awake () {
+		
+		playerObject = GameObject.FindGameObjectWithTag("Player");
+		player = playerObject.GetComponent<PlayerController>();
+		
+		Destroy(AreaDoors[0]);
 		
 	}
 	

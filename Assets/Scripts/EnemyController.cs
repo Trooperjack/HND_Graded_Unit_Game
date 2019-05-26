@@ -20,11 +20,20 @@ public class EnemyController : MonoBehaviour {
 	public int score = 100;
 	public int dropChance = 20;
 	
+	public GameObject lightAmmo;
+	public GameObject medAmmo;
+	public GameObject largeAmmo;
+	
+	public GameObject lightHealth;
+	public GameObject medHealth;
+	public GameObject largeHealth;
+	
 	//private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
     private float nextFire;
     private int shotsFired;
 
 	public Transform playerTransform;
+	public Transform triggerTarget;
 	PlayerController player;
 	NavMeshAgent nav;
 	
@@ -33,6 +42,8 @@ public class EnemyController : MonoBehaviour {
 		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		player = playerTransform.GetComponent<PlayerController>();
 		nav = GetComponent<NavMeshAgent>();
+		
+		triggerTarget = GameObject.FindGameObjectWithTag("Trigger Target").transform;
 		
 		isDead = false;
         currentHealth = startingHealth;
@@ -45,12 +56,13 @@ public class EnemyController : MonoBehaviour {
 		
 		if (!isDead && player.isDead == false)
 		{
-			nav.SetDestination(playerTransform.position);
+			nav.SetDestination(triggerTarget.position);
 		}
 		else
 		{
 			nav.enabled = false;
 		}
+		
 		
 	}
 	
@@ -61,8 +73,41 @@ public class EnemyController : MonoBehaviour {
         if (currentHealth <= 0)
         {
 			isDead = true;
+			randomPickup();
 			Destroy(gameObject);
         }
     }
+	
+	
+	void randomPickup()
+	{
+		
+		int ammo;
+		int a;
+		a = Random.Range(0,100);
+		
+		if (a <= dropChance)
+		{
+			ammo = Random.Range(0,100);
+			if (ammo >= 0 && ammo < 50)
+			{
+				Instantiate(lightAmmo, transform.position, transform.rotation);
+			}
+			if (ammo >= 50 && ammo < 80)
+			{
+				Instantiate(medAmmo, transform.position, transform.rotation);
+			}
+			if (ammo >= 80 && ammo < 95)
+			{
+				Instantiate(largeAmmo, transform.position, transform.rotation);
+			}
+			if (ammo >= 95 && ammo < 100)
+			{
+				Instantiate(lightHealth, transform.position, transform.rotation);
+			}
+		}
+		
+		
+	}
 	
 }

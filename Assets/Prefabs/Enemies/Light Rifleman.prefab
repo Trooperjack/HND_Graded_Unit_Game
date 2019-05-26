@@ -108,7 +108,16 @@ MonoBehaviour:
   reloadTime: 3
   score: 100
   dropChance: 20
+  lightAmmo: {fileID: 1671324723705454, guid: 1c2da304dadc3ca4ca4cfd3d55e15904, type: 2}
+  medAmmo: {fileID: 1775456644422078, guid: 9cfccd587b7d46248a404107e20d0cb9, type: 2}
+  largeAmmo: {fileID: 1079470388450602, guid: 8bcd34e70f8741142b2924ee350ca25c, type: 2}
+  lightHealth: {fileID: 1615514383295654, guid: a6d98747a62c9b142b5e2b7745d5e427,
+    type: 2}
+  medHealth: {fileID: 1532242331614108, guid: 90f7e3636a2eef24691d75a5e04c2422, type: 2}
+  largeHealth: {fileID: 1945570863498238, guid: f33cfba80d5e16640aa0c8a7a20b0dd5,
+    type: 2}
   playerTransform: {fileID: 0}
+  triggerTarget: {fileID: 0}
 --- !u!136 &136472263447268882
 CapsuleCollider:
   m_ObjectHideFlags: 1

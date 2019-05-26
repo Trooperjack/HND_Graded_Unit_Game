@@ -13,6 +13,8 @@ TagManager:
   - MediumHealthPickup
   - LargeHealthPickup
   - Enemy
+  - Trigger Target
+  - Level Manager
   layers:
   - Default
   - TransparentFX
