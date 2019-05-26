@@ -17,6 +17,10 @@ TagManager:
   - Level Manager
   - DefendArea
   - Projectile
+  - Enemy Manager
+  - SniperSpawnsA
+  - SniperSpawnsB
+  - SniperSpawnsC
   layers:
   - Default
   - TransparentFX

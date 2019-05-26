@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour {
 	public int currentHealth;
 	public bool isDead;
 	
-	public int damage = 38;
+	public int damage = 24;
 	public float fireRate = .25f;
 	
 	public int startingMagazine = 10;
@@ -31,6 +31,9 @@ public class EnemyController : MonoBehaviour {
 	public GameObject medHealth;
 	public GameObject largeHealth;
 	
+	public GameObject LevelManagerObject;
+	LevelManager levelManager;
+	
 	private WaitForSeconds shotDuration = new WaitForSeconds(0.07f);
     private float nextFire;
 
@@ -41,6 +44,9 @@ public class EnemyController : MonoBehaviour {
 	NavMeshAgent nav;
 	
 	void Awake () {
+		
+		LevelManagerObject = GameObject.FindGameObjectWithTag("Level Manager");
+		levelManager = LevelManagerObject.GetComponent<LevelManager>();
 		
 		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		player = playerTransform.GetComponent<PlayerController>();
@@ -86,7 +92,7 @@ public class EnemyController : MonoBehaviour {
 		
 		if (!isDead && player.isDead == false)
 		{
-			if (doseDefendAreaExist == true)
+			if (doseDefendAreaExist == true && levelManager.defendAreaObjectiveActive == true)
 			{
 				triggerTarget = GameObject.FindGameObjectWithTag("Trigger Target").transform;
 				nav.SetDestination(triggerTarget.position);
@@ -115,6 +121,11 @@ public class EnemyController : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			GameObject bullet = Instantiate(projectile, transform.position + transform.forward * 2, Quaternion.identity) as GameObject;
 			Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(),bullet.GetComponent<SphereCollider>());
+			BulletProjectile bulletScript = bullet.GetComponent<BulletProjectile>();
+			if (bulletScript != null)
+			{
+				bulletScript.setDamage(damage);
+			}
 			bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
 		}
 	}
@@ -139,6 +150,7 @@ public class EnemyController : MonoBehaviour {
 			Destroy(gameObject);
         }
     }
+	
 	
 	
 	void randomPickup()

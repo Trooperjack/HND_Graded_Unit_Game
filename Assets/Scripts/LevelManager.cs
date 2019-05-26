@@ -7,7 +7,17 @@ public class LevelManager : MonoBehaviour {
 	public GameObject playerObject;
 	PlayerController player;
 	
+	public GameObject enemyManager;
+	EnemySpawning enemySpawningScript;
+	
 	public GameObject[] DefendArea;
+	
+	public GameObject SniperGroupA;
+	public GameObject SniperGroupB;
+	public GameObject SniperGroupC;
+	public GameObject[] SniperSpawns;
+	
+	public bool defendAreaObjectiveActive;
 	
 	public GameObject[] AreaDoors;
 
@@ -25,10 +35,18 @@ public class LevelManager : MonoBehaviour {
 	
 	void Awake () {
 		
+		SniperGroupA = GameObject.FindGameObjectWithTag("SniperSpawnsA");
+		SniperGroupB = GameObject.FindGameObjectWithTag("SniperSpawnsB");
+		SniperGroupC = GameObject.FindGameObjectWithTag("SniperSpawnsC");
+		
 		playerObject = GameObject.FindGameObjectWithTag("Player");
 		player = playerObject.GetComponent<PlayerController>();
 		
+		enemyManager = GameObject.FindGameObjectWithTag("Enemy Manager");
+		enemySpawningScript = enemyManager.GetComponent<EnemySpawning>();
+		
 		Destroy(AreaDoors[0]);
+		defendAreaObjectiveActive = false;
 		
 		DefendAreaLocated = false; //1
 		KillSnipersLocated = false; //2
@@ -47,8 +65,19 @@ public class LevelManager : MonoBehaviour {
 			{
 				Destroy(DefendArea[1]);
 				Destroy(DefendArea[2]);
+				Destroy(SniperGroupA);
 				Area1Done = true;
 				DefendAreaLocated = true;
+				defendAreaObjectiveActive = true;
+			}
+			else if (area1 == 2 && KillSnipersLocated == false)
+			{
+				Destroy(DefendArea[0]);
+				Destroy(SniperGroupB);
+				Destroy(SniperGroupC);
+				Area1Done = true;
+				KillSnipersLocated = true;
+				enemySpawningScript.ActivateSnipers();
 			}
 			else
 			{
@@ -64,9 +93,13 @@ public class LevelManager : MonoBehaviour {
 	}
 	
 	
+	
+	
 	public void onArea1Complete()
 	{
 		Destroy(AreaDoors[1]);
+		enemySpawningScript.DeactivateSnipers();
+		defendAreaObjectiveActive = false;
 		
 		while(Area2Done == false)
 		{

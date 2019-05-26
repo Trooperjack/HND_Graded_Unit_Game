@@ -365,15 +365,15 @@ public class PlayerController : MonoBehaviour {
 		//Damaged
 		if (other.gameObject.CompareTag("Projectile") && !isDead)
 		{
-			onDamaged();
+			Debug.Log("IS HIT");
 		}
 	}
 	
 
 	//When the player is damaged
-	void onDamaged()
+	public void onDamaged(int damageAmount)
 	{
-		currentHealth = currentHealth - 10;
+		currentHealth = currentHealth - damageAmount;
 		if (currentHealth <= 0)
 		{
 			isDead = true;

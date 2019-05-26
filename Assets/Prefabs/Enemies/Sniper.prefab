@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33952385115320198}
   - component: {fileID: 23474347454822678}
   - component: {fileID: 136245180331141048}
+  - component: {fileID: 114010006843271662}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -84,6 +85,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1898653418519864}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114010006843271662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1898653418519864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3aed2ccc8ef8514f9bc6bc1b309c263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  maxHealth: 100
+  currentHealth: 0
+  isDead: 0
+  damage: 50
+  fireRate: 0.5
+  startingMagazine: 5
+  maxMagazine: 5
+  currentMagazine: 0
+  reloadTime: 3
+  isReloading: 0
+  canFire: 0
+  score: 100
+  projectile: {fileID: 0}
+  playerTransform: {fileID: 0}
+  triggerTarget: {fileID: 0}
+  enemyManager: {fileID: 0}
 --- !u!136 &136245180331141048
 CapsuleCollider:
   m_ObjectHideFlags: 1
