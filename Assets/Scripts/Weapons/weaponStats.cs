@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class garandWeapon : MonoBehaviour {
+public class weaponStats : MonoBehaviour {
 
 	//https://www.youtube.com/watch?v=THnivyG0Mvo
 
 	public Transform gunTip;
-	
+	public GameObject weaponHolder;
+	WeaponSwitching holder;
 	
 	public string weaponName = "M1 Garand";
 	public int gunDamage = 65;
@@ -49,6 +50,9 @@ public class garandWeapon : MonoBehaviour {
         reloadText = GameObject.Find("Canvas/ReloadText").GetComponent<Text>();
 		weaponText = GameObject.Find("Canvas/WeaponText").GetComponent<Text>();
 		
+		weaponHolder = GameObject.FindGameObjectWithTag("Weapon Holder");
+		holder = weaponHolder.GetComponent<WeaponSwitching>();
+		
 		startingMagazine = maxMagazine;
 		startingAmmo = maxAmmo;
         currentMagazine = startingMagazine;
@@ -60,7 +64,7 @@ public class garandWeapon : MonoBehaviour {
 		
 		CheckReloadText();
 		
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButton("Fire1"))
 		{
 			Shoot();
 		}
@@ -73,6 +77,7 @@ public class garandWeapon : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R) && !isReloading && currentMagazine < maxMagazine && currentAmmo > 0)
         {
             isReloading = true;
+			holder.isReloading = true;
             StartCoroutine(ReloadDelay());
         }
 
@@ -203,6 +208,7 @@ public class garandWeapon : MonoBehaviour {
             currentAmmo = 0;
         }
         isReloading = false;
+		holder.isReloading = false;
         canFire = true;
     }
 	

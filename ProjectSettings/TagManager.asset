@@ -23,6 +23,7 @@ TagManager:
   - SniperSpawnsC
   - Ammo Box
   - Sniper
+  - Weapon Holder
   layers:
   - Default
   - TransparentFX
