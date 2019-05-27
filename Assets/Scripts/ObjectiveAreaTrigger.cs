@@ -7,6 +7,7 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 	public GameObject LevelManagerObject;
 	LevelManager levelManager;
 
+	public int loseValue = 1;
 	public float healthTime = 60f;
 	public float areaTimer = 300f;
 	public bool isInside;
@@ -16,6 +17,8 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 	
 	
 	void Awake () {
+		
+		loseValue = 1;
 		
 		LevelManagerObject = GameObject.FindGameObjectWithTag("Level Manager");
 		levelManager = LevelManagerObject.GetComponent<LevelManager>();
@@ -70,7 +73,7 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 			Debug.Log("OBJECTIVE CAPTURED BY THE ENEMY!");
 			isCaptured = true;
 			isActive = false;
-			levelManager.onArea1Complete();
+			levelManager.LoseGame(loseValue);
 			Destroy(gameObject);
 		}
 	}
@@ -85,6 +88,8 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 			Debug.Log("OBJECTIVE SUCCESSFULLY DEFENDED!");
 			isDefended = true;
 			isActive = false;
+			levelManager.onAreaCompleteX();
+			Destroy(gameObject);
 		}
 	}
 	

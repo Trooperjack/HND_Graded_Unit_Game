@@ -111,8 +111,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelManagerObject: {fileID: 1184758030651616, guid: 8c099b73ff325d849a0e6cff37e7ef0b,
     type: 2}
-  healthTime: 30
-  areaTimer: 120
+  loseValue: 1
+  healthTime: 60
+  areaTimer: 60
   isInside: 0
   isActive: 0
   isCaptured: 0

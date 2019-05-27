@@ -312,7 +312,8 @@ public class PlayerController : MonoBehaviour {
         //Light Ammo
         if (other.gameObject.CompareTag("LightAmmoPickup") && currentAmmo < maxAmmo)
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
             float a;
             int b;
             a = currentAmmo + ((maxAmmo / 100) * 20);
@@ -322,7 +323,8 @@ public class PlayerController : MonoBehaviour {
         //Medium Ammo
         if (other.gameObject.CompareTag("MediumAmmoPickup") && currentAmmo < maxAmmo)
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
             float a;
             int b;
             a = currentAmmo + ((maxAmmo / 100) * 40);
@@ -332,7 +334,8 @@ public class PlayerController : MonoBehaviour {
         //Large Ammo
         if (other.gameObject.CompareTag("LargeAmmoPickup") && currentAmmo < maxAmmo)
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
             float a;
             int b;
             a = currentAmmo + ((maxAmmo / 100) * 60);
@@ -344,7 +347,8 @@ public class PlayerController : MonoBehaviour {
         //Light Health
         if (other.gameObject.CompareTag("LightHealthPickup") && currentHealth < maxHealth)
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
             float a;
             int b;
             a = currentHealth + ((maxHealth / 100) * 20);
@@ -354,7 +358,8 @@ public class PlayerController : MonoBehaviour {
         //Medium Health
         if (other.gameObject.CompareTag("MediumHealthPickup") && currentHealth < maxHealth)
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
             float a;
             int b;
             a = currentHealth + ((maxHealth / 100) * 50);
@@ -364,7 +369,8 @@ public class PlayerController : MonoBehaviour {
         //Large Health
         if (other.gameObject.CompareTag("LargeHealthPickup") && currentHealth < maxHealth)
         {
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+			Destroy(other.gameObject);
             float a;
             int b;
             a = currentHealth + ((maxHealth / 100) * 80);
