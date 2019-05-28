@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
@@ -30,6 +31,8 @@ public class LevelManager : MonoBehaviour {
 	public Transform[] FlakSpawnPointsC;
 	
 	public bool defendAreaObjectiveActive;
+	public bool KillSnipersObjectiveActive;
+	public bool FlakCannonsObjectiveActive;
 	public bool doseAreaDefendExist;
 	
 	public GameObject[] AreaDoors;
@@ -53,6 +56,8 @@ public class LevelManager : MonoBehaviour {
 	
 	private float startDelay = 1f;
 	
+	Text objectiveText;
+	Text objAmountText;
 	
 	void Awake()
 	{
@@ -70,10 +75,12 @@ public class LevelManager : MonoBehaviour {
 		enemyManager = GameObject.FindGameObjectWithTag("Enemy Manager");
 		enemySpawningScript = enemyManager.GetComponent<EnemySpawning>();
 		
-		//objectiveAreaObject = GameObject.FindGameObjectWithTag("DefendArea");
-		//objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
+		objectiveText = GameObject.Find("Canvas/ObjectiveText").GetComponent<Text>();
+		objAmountText = GameObject.Find("Canvas/objAmountText").GetComponent<Text>();
 		
 		defendAreaObjectiveActive = false;
+		KillSnipersObjectiveActive = false;
+		FlakCannonsObjectiveActive = false;
 		doseAreaDefendExist = false;
 		
 		DefendAreaLocated = false; //1
@@ -93,6 +100,9 @@ public class LevelManager : MonoBehaviour {
 		area1 = Random.Range(1,4);
 		area2 = Random.Range(1,4);
 		area3 = Random.Range(1,4);
+		
+		objectiveText.text = "";
+		objAmountText.text = "";
 	}
 	
 	
@@ -119,6 +129,7 @@ public class LevelManager : MonoBehaviour {
 					objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
 					objArea.isActive = true;
 				}
+				objectiveText.text = "Defend the area!";
 			}
 			else if (area1 == 2 && KillSnipersLocated == false)
 			{
@@ -128,7 +139,9 @@ public class LevelManager : MonoBehaviour {
 				Destroy(FlakGroupA);
 				Area1Done = true;
 				KillSnipersLocated = true;
+				KillSnipersObjectiveActive = true;
 				enemySpawningScript.SniperA();
+				objectiveText.text = "Find & Kill the Snipers!";
 			}
 			else if (area1 == 3 && FlakCannonsLocated == false)
 			{
@@ -136,7 +149,9 @@ public class LevelManager : MonoBehaviour {
 				Destroy(SniperGroupA);
 				Area1Done = true;
 				FlakCannonsLocated = true;
+				FlakCannonsObjectiveActive = true;
 				SpawnFlakCannonsA();
+				objectiveText.text = "Find & Destroy the Flak Cannons!";
 			}
 			else
 			{
@@ -165,6 +180,24 @@ public class LevelManager : MonoBehaviour {
 		{
 			FlakCannonsDone = true;
 			onAreaCompleteX();
+		}
+		
+		if (defendAreaObjectiveActive == true)
+		{
+			if (objArea.isActive == true)
+			{
+				objAmountText.text = "Defend for: " + objArea.areaTimer + " Seconds!";
+			}
+		}
+		
+		if (KillSnipersObjectiveActive == true)
+		{
+			objAmountText.text = "" + enemySpawningScript.sniperDeaths + " / 6";
+		}
+		
+		if (FlakCannonsObjectiveActive == true)
+		{
+			objAmountText.text = "" + FlakCannonsKilled + " / " + FlakCannonsAmount;
 		}
 		
 	}
@@ -196,6 +229,8 @@ public class LevelManager : MonoBehaviour {
 		//objArea.isActive = false;
 		enemySpawningScript.snipersActive = false;
 		defendAreaObjectiveActive = false;
+		KillSnipersObjectiveActive = false;
+		FlakCannonsObjectiveActive = false;
 		enemySpawningScript.ifSpawningA = false;
 		enemySpawningScript.ifSpawningB = true;
 		StartCoroutine(Area2Delay());
@@ -208,6 +243,8 @@ public class LevelManager : MonoBehaviour {
 		//objArea.isActive = false;
 		enemySpawningScript.snipersActive = false;
 		defendAreaObjectiveActive = false;
+		KillSnipersObjectiveActive = false;
+		FlakCannonsObjectiveActive = false;
 		enemySpawningScript.ifSpawningB = false;
 		enemySpawningScript.ifSpawningC = true;
 		StartCoroutine(Area3Delay());
@@ -247,6 +284,7 @@ public class LevelManager : MonoBehaviour {
 					objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
 					objArea.isActive = true;
 				}
+				objectiveText.text = "Defend the area!";
 			}
 			else if (area2 == 2 && KillSnipersLocated == false)
 			{
@@ -256,7 +294,9 @@ public class LevelManager : MonoBehaviour {
 				Destroy(FlakGroupB);
 				Area2Done = true;
 				KillSnipersLocated = true;
+				KillSnipersObjectiveActive = true;
 				enemySpawningScript.SniperB();
+				objectiveText.text = "Find & Kill the Snipers!";
 			}
 			else if (area2 == 3 && FlakCannonsLocated == false)
 			{
@@ -264,7 +304,9 @@ public class LevelManager : MonoBehaviour {
 				Destroy(SniperGroupB);
 				Area2Done = true;
 				FlakCannonsLocated = true;
+				FlakCannonsObjectiveActive = true;
 				SpawnFlakCannonsB();
+				objectiveText.text = "Find & Destroy the Flak Cannons!";
 			}
 			else
 			{
@@ -294,6 +336,7 @@ public class LevelManager : MonoBehaviour {
 					objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
 					objArea.isActive = true;
 				}
+				objectiveText.text = "Defend the area!";
 			}
 			else if (area3 == 2 && KillSnipersLocated == false)
 			{
@@ -303,7 +346,9 @@ public class LevelManager : MonoBehaviour {
 				Destroy(FlakGroupC);
 				Area3Done = true;
 				KillSnipersLocated = true;
+				KillSnipersObjectiveActive = true;
 				enemySpawningScript.SniperC();
+				objectiveText.text = "Find & Kill the Snipers!";
 			}
 			else if (area3 == 3 && FlakCannonsLocated == false)
 			{
@@ -311,7 +356,9 @@ public class LevelManager : MonoBehaviour {
 				Destroy(SniperGroupC);
 				Area3Done = true;
 				FlakCannonsLocated = true;
+				FlakCannonsObjectiveActive = true;
 				SpawnFlakCannonsC();
+				objectiveText.text = "Find & Destroy the Flak Cannons!";
 			}
 			else
 			{
@@ -367,6 +414,10 @@ public class LevelManager : MonoBehaviour {
 	{
 		enemySpawningScript.snipersActive = false;
 		defendAreaObjectiveActive = false;
+		KillSnipersObjectiveActive = false;
+		FlakCannonsObjectiveActive = false;
+		objectiveText.text = "YOU WON!";
+		objAmountText.text = "";
 		Debug.Log("PLAYER WINS GAME");
 	}
 	
@@ -374,9 +425,19 @@ public class LevelManager : MonoBehaviour {
 	{
 		enemySpawningScript.snipersActive = false;
 		defendAreaObjectiveActive = false;
+		KillSnipersObjectiveActive = false;
+		FlakCannonsObjectiveActive = false;
 		if (loseCondition == 1)
 		{
 			Debug.Log("PLAYER LOST: FAILED TO DEFEND AREA");
+		}
+		if (loseCondition == 2)
+		{
+			Debug.Log("PLAYER LOST: FAILED TO KILL SNIPERS");
+		}
+		if (loseCondition == 3)
+		{
+			Debug.Log("PLAYER LOST: FAILED TO DESTROY FLAK CANNONS");
 		}
 	}
 	
