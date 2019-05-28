@@ -28,6 +28,13 @@ TagManager:
   - M1Garand
   - M1A1Thompson
   - Panzerschreck
+  - FlakSpawnsA
+  - FlakSpawnsB
+  - FlakSpawnsC
+  - FlakCannon
+  - DefendArea1
+  - DefendArea2
+  - DefendArea3
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,7 @@ public class ObjectiveAreaTrigger : MonoBehaviour {
 		levelManager = LevelManagerObject.GetComponent<LevelManager>();
 		
 		isInside = false;
-		isActive = true;
+		isActive = false;
 		isCaptured = false;
 		isDefended = false;
 		

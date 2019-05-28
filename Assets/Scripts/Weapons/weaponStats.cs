@@ -12,6 +12,7 @@ public class WeaponStats : MonoBehaviour {
 	WeaponSwitching holder;
 	
 	public string weaponName = "M1 Garand";
+	public string damageType = "bullet";
 	public int gunDamage = 65;
 	public int startingMagazine;
     public int maxMagazine = 8;
@@ -133,6 +134,7 @@ public class WeaponStats : MonoBehaviour {
                 ShootableBox health = hit.collider.GetComponent<ShootableBox>();
 				EnemyController enemyHealth = hit.collider.GetComponent<EnemyController>();
 				EnemySniperController enemySniperHealth = hit.collider.GetComponent<EnemySniperController>();
+				FlakCannonController flakCannonHealth = hit.collider.GetComponent<FlakCannonController>();
 				
                 if (health != null)
                 {
@@ -147,6 +149,11 @@ public class WeaponStats : MonoBehaviour {
 				if (enemySniperHealth != null)
                 {
                     enemySniperHealth.Damage(gunDamage);
+                }
+				
+				if (flakCannonHealth != null && damageType == "rocket")
+                {
+                    flakCannonHealth.Damage(gunDamage);
                 }
 				
                 if (hit.rigidbody != null)

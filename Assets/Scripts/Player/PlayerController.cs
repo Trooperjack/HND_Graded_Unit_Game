@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     public int maxHealth = 100;
     public int currentHealth;
     public bool isDead;
+	public bool godMode = false;
 	
 	public GameObject wep1;
 	public GameObject wep2;
@@ -176,11 +177,6 @@ public class PlayerController : MonoBehaviour {
 			gara.getAmmo(chance);
 			tommy.getAmmo(chance);
 			panz.getAmmo(chance);
-            float a;
-            int b;
-            //a = wepStats.currentAmmo + ((wepStats.maxAmmo / 100) * 20);
-            //b = Mathf.RoundToInt(a);
-            //wepStats.currentAmmo = wepStats.currentAmmo + b;
         }
         //Medium Ammo
         if (other.gameObject.CompareTag("MediumAmmoPickup"))
@@ -190,11 +186,6 @@ public class PlayerController : MonoBehaviour {
 			gara.getAmmo(chance);
 			tommy.getAmmo(chance);
 			panz.getAmmo(chance);
-            float a;
-            int b;
-            //a = wepStats.currentAmmo + ((wepStats.maxAmmo / 100) * 40);
-            //b = Mathf.RoundToInt(a);
-            //wepStats.currentAmmo = wepStats.currentAmmo + b;
         }
         //Large Ammo
         if (other.gameObject.CompareTag("LargeAmmoPickup"))
@@ -204,11 +195,6 @@ public class PlayerController : MonoBehaviour {
 			gara.getAmmo(chance);
 			tommy.getAmmo(chance);
 			panz.getAmmo(chance);
-            float a;
-            int b;
-            //a = wepStats.currentAmmo + ((wepStats.maxAmmo / 100) * 60);
-            //b = Mathf.RoundToInt(a);
-            //wepStats.currentAmmo = wepStats.currentAmmo + b;
         }
 
         //Health Pickups
@@ -259,10 +245,13 @@ public class PlayerController : MonoBehaviour {
 	//When the player is damaged
 	public void onDamaged(int damageAmount)
 	{
-		currentHealth = currentHealth - damageAmount;
-		if (currentHealth <= 0)
+		if (!godMode)
 		{
-			isDead = true;
+			currentHealth = currentHealth - damageAmount;
+			if (currentHealth <= 0)
+			{
+				isDead = true;
+			}
 		}
 
 	}

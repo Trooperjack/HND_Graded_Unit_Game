@@ -10,6 +10,11 @@ public class LevelManager : MonoBehaviour {
 	public GameObject enemyManager;
 	EnemySpawning enemySpawningScript;
 	
+	public GameObject objectiveAreaObject;
+	ObjectiveAreaTrigger objArea;
+	
+	public GameObject FlakCannon;
+	
 	public GameObject[] DefendArea;
 	
 	public GameObject SniperGroupA;
@@ -17,7 +22,15 @@ public class LevelManager : MonoBehaviour {
 	public GameObject SniperGroupC;
 	public GameObject[] SniperSpawns;
 	
+	public GameObject FlakGroupA;
+	public GameObject FlakGroupB;
+	public GameObject FlakGroupC;
+	public Transform[] FlakSpawnPointsA;
+	public Transform[] FlakSpawnPointsB;
+	public Transform[] FlakSpawnPointsC;
+	
 	public bool defendAreaObjectiveActive;
+	public bool doseAreaDefendExist;
 	
 	public GameObject[] AreaDoors;
 
@@ -34,6 +47,9 @@ public class LevelManager : MonoBehaviour {
 	
 	public int ObjectivesCompleted;
 	public bool EnemySnipersDone;
+	public int FlakCannonsAmount;
+	public int FlakCannonsKilled;
+	public bool FlakCannonsDone;
 	
 	private float startDelay = 1f;
 	
@@ -44,13 +60,21 @@ public class LevelManager : MonoBehaviour {
 		SniperGroupB = GameObject.FindGameObjectWithTag("SniperSpawnsB");
 		SniperGroupC = GameObject.FindGameObjectWithTag("SniperSpawnsC");
 		
+		FlakGroupA = GameObject.FindGameObjectWithTag("FlakSpawnsA");
+		FlakGroupB = GameObject.FindGameObjectWithTag("FlakSpawnsB");
+		FlakGroupC = GameObject.FindGameObjectWithTag("FlakSpawnsC");
+		
 		playerObject = GameObject.FindGameObjectWithTag("Player");
 		player = playerObject.GetComponent<PlayerController>();
 		
 		enemyManager = GameObject.FindGameObjectWithTag("Enemy Manager");
 		enemySpawningScript = enemyManager.GetComponent<EnemySpawning>();
 		
+		//objectiveAreaObject = GameObject.FindGameObjectWithTag("DefendArea");
+		//objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
+		
 		defendAreaObjectiveActive = false;
+		doseAreaDefendExist = false;
 		
 		DefendAreaLocated = false; //1
 		KillSnipersLocated = false; //2
@@ -59,8 +83,12 @@ public class LevelManager : MonoBehaviour {
 		Area2Done = false;
 		Area3Done = false;
 		
+		//objArea.isActive = false;
 		ObjectivesCompleted = 0;
 		EnemySnipersDone = false;
+		FlakCannonsAmount = 1;
+		FlakCannonsKilled = 0;
+		FlakCannonsDone = false;
 		
 		area1 = Random.Range(1,4);
 		area2 = Random.Range(1,4);
@@ -80,18 +108,35 @@ public class LevelManager : MonoBehaviour {
 				Destroy(DefendArea[1]);
 				Destroy(DefendArea[2]);
 				Destroy(SniperGroupA);
+				Destroy(FlakGroupA);
 				Area1Done = true;
 				DefendAreaLocated = true;
 				defendAreaObjectiveActive = true;
+				doseAreaDefendExist = GameObject.FindGameObjectWithTag("DefendArea1");
+				if (doseAreaDefendExist == true)
+				{
+					objectiveAreaObject = GameObject.FindGameObjectWithTag("DefendArea1");
+					objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
+					objArea.isActive = true;
+				}
 			}
 			else if (area1 == 2 && KillSnipersLocated == false)
 			{
 				Destroy(DefendArea[0]);
 				Destroy(SniperGroupB);
 				Destroy(SniperGroupC);
+				Destroy(FlakGroupA);
 				Area1Done = true;
 				KillSnipersLocated = true;
 				enemySpawningScript.SniperA();
+			}
+			else if (area1 == 3 && FlakCannonsLocated == false)
+			{
+				Destroy(DefendArea[0]);
+				Destroy(SniperGroupA);
+				Area1Done = true;
+				FlakCannonsLocated = true;
+				SpawnFlakCannonsA();
 			}
 			else
 			{
@@ -113,6 +158,12 @@ public class LevelManager : MonoBehaviour {
 		if (enemySpawningScript.snipersCompleted == true && EnemySnipersDone == false)
 		{
 			EnemySnipersDone = true;
+			onAreaCompleteX();
+		}
+		
+		if (FlakCannonsKilled == FlakCannonsAmount && FlakCannonsDone == false)
+		{
+			FlakCannonsDone = true;
 			onAreaCompleteX();
 		}
 		
@@ -142,6 +193,7 @@ public class LevelManager : MonoBehaviour {
 	public void onArea1Complete()
 	{
 		Destroy(AreaDoors[1]);
+		//objArea.isActive = false;
 		enemySpawningScript.snipersActive = false;
 		defendAreaObjectiveActive = false;
 		enemySpawningScript.ifSpawningA = false;
@@ -153,6 +205,7 @@ public class LevelManager : MonoBehaviour {
 	public void onArea2Complete()
 	{
 		Destroy(AreaDoors[2]);
+		//objArea.isActive = false;
 		enemySpawningScript.snipersActive = false;
 		defendAreaObjectiveActive = false;
 		enemySpawningScript.ifSpawningB = false;
@@ -183,18 +236,35 @@ public class LevelManager : MonoBehaviour {
 				Destroy(DefendArea[0]);
 				Destroy(DefendArea[2]);
 				Destroy(SniperGroupB);
+				Destroy(FlakGroupB);
 				Area2Done = true;
 				DefendAreaLocated = true;
 				defendAreaObjectiveActive = true;
+				doseAreaDefendExist = GameObject.FindGameObjectWithTag("DefendArea2");
+				if (doseAreaDefendExist == true)
+				{
+					objectiveAreaObject = GameObject.FindGameObjectWithTag("DefendArea2");
+					objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
+					objArea.isActive = true;
+				}
 			}
 			else if (area2 == 2 && KillSnipersLocated == false)
 			{
 				Destroy(DefendArea[1]);
 				Destroy(SniperGroupA);
 				Destroy(SniperGroupC);
+				Destroy(FlakGroupB);
 				Area2Done = true;
 				KillSnipersLocated = true;
 				enemySpawningScript.SniperB();
+			}
+			else if (area2 == 3 && FlakCannonsLocated == false)
+			{
+				Destroy(DefendArea[1]);
+				Destroy(SniperGroupB);
+				Area2Done = true;
+				FlakCannonsLocated = true;
+				SpawnFlakCannonsB();
 			}
 			else
 			{
@@ -213,29 +283,81 @@ public class LevelManager : MonoBehaviour {
 				Destroy(DefendArea[0]);
 				Destroy(DefendArea[1]);
 				Destroy(SniperGroupC);
+				Destroy(FlakGroupC);
 				Area3Done = true;
 				DefendAreaLocated = true;
 				defendAreaObjectiveActive = true;
+				doseAreaDefendExist = GameObject.FindGameObjectWithTag("DefendArea3");
+				if (doseAreaDefendExist == true)
+				{
+					objectiveAreaObject = GameObject.FindGameObjectWithTag("DefendArea3");
+					objArea = objectiveAreaObject.GetComponent<ObjectiveAreaTrigger>();
+					objArea.isActive = true;
+				}
 			}
 			else if (area3 == 2 && KillSnipersLocated == false)
 			{
 				Destroy(DefendArea[2]);
 				Destroy(SniperGroupA);
 				Destroy(SniperGroupB);
+				Destroy(FlakGroupC);
 				Area3Done = true;
 				KillSnipersLocated = true;
 				enemySpawningScript.SniperC();
 			}
+			else if (area3 == 3 && FlakCannonsLocated == false)
+			{
+				Destroy(DefendArea[2]);
+				Destroy(SniperGroupC);
+				Area3Done = true;
+				FlakCannonsLocated = true;
+				SpawnFlakCannonsC();
+			}
 			else
 			{
-				//area3 = Random.Range(1,4);
-				Area3Done = true;
+				area3 = Random.Range(1,4);
+				//Area3Done = true;
 			}
 		}
 	}
 	
 	
 	
+	
+	
+	public void SpawnFlakCannonsA()
+	{
+		int cannonsSpawned = 0;
+		while(cannonsSpawned < FlakCannonsAmount)
+		{
+			int spawnPointIndex = Random.Range (0, FlakSpawnPointsA.Length);
+			Instantiate (FlakCannon, FlakSpawnPointsA[spawnPointIndex].position, FlakSpawnPointsA[spawnPointIndex].rotation);
+			//FlakSpawnPointsA[spawnPointIndex].SetActive(false);
+			cannonsSpawned++;
+		}
+	}
+	public void SpawnFlakCannonsB()
+	{
+		int cannonsSpawned = 0;
+		while(cannonsSpawned < FlakCannonsAmount)
+		{
+			int spawnPointIndex = Random.Range (0, FlakSpawnPointsB.Length);
+			Instantiate (FlakCannon, FlakSpawnPointsB[spawnPointIndex].position, FlakSpawnPointsB[spawnPointIndex].rotation);
+			//FlakSpawnPointsA[spawnPointIndex].SetActive(false);
+			cannonsSpawned++;
+		}
+	}
+	public void SpawnFlakCannonsC()
+	{
+		int cannonsSpawned = 0;
+		while(cannonsSpawned < FlakCannonsAmount)
+		{
+			int spawnPointIndex = Random.Range (0, FlakSpawnPointsC.Length);
+			Instantiate (FlakCannon, FlakSpawnPointsC[spawnPointIndex].position, FlakSpawnPointsC[spawnPointIndex].rotation);
+			//FlakSpawnPointsA[spawnPointIndex].SetActive(false);
+			cannonsSpawned++;
+		}
+	}
 	
 	
 	
