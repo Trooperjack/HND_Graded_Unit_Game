@@ -24,6 +24,10 @@ TagManager:
   - Ammo Box
   - Sniper
   - Weapon Holder
+  - Player Weapon
+  - M1Garand
+  - M1A1Thompson
+  - Panzerschreck
   layers:
   - Default
   - TransparentFX

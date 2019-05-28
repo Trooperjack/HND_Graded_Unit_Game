@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 96bcdccd204ed6d42ac87d3fdd50ebb0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Barrel
+    100002: Front Grip
+    100004: Front Sigh
+    100006: Mag
+    100008: Main
+    100010: Object1
+    100012: Pistol Gri
+    100014: Rear Sight
+    100016: Stock
+    100018: //RootNode
+    400000: Barrel
+    400002: Front Grip
+    400004: Front Sigh
+    400006: Mag
+    400008: Main
+    400010: Object1
+    400012: Pistol Gri
+    400014: Rear Sight
+    400016: Stock
+    400018: //RootNode
+    2100000: Barrel_auv
+    2100002: Front Grip_auv
+    2100004: Front Sight_auv
+    2100006: Mag_auv
+    2100008: Main_auv
+    2100010: Object1_auv
+    2100012: Pistol Grip_auv
+    2100014: Stock_auv
+    2100016: default
+    2300000: Barrel
+    2300002: Front Grip
+    2300004: Front Sigh
+    2300006: Mag
+    2300008: Main
+    2300010: Object1
+    2300012: Pistol Gri
+    2300014: Rear Sight
+    2300016: Stock
+    3300000: Barrel
+    3300002: Front Grip
+    3300004: Front Sigh
+    3300006: Mag
+    3300008: Main
+    3300010: Object1
+    3300012: Pistol Gri
+    3300014: Rear Sight
+    3300016: Stock
+    4300000: Object1
+    4300002: Mag
+    4300004: Front Sigh
+    4300006: Barrel
+    4300008: Rear Sight
+    4300010: Front Grip
+    4300012: Pistol Gri
+    4300014: Main
+    4300016: Stock
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barrel_auv
+    second: {fileID: 2100000, guid: a91400245b0529244ba52e6df3003aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Front Grip_auv
+    second: {fileID: 2100000, guid: ad89bc26f648b16439beafe555e24415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Front Sight_auv
+    second: {fileID: 2100000, guid: a91400245b0529244ba52e6df3003aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mag_auv
+    second: {fileID: 2100000, guid: a91400245b0529244ba52e6df3003aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main_auv
+    second: {fileID: 2100000, guid: a91400245b0529244ba52e6df3003aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Object1_auv
+    second: {fileID: 2100000, guid: a91400245b0529244ba52e6df3003aa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pistol Grip_auv
+    second: {fileID: 2100000, guid: 9a5e3223b90e7164fa399c0b00566fe1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stock_auv
+    second: {fileID: 2100000, guid: a230d309efa08ba46baba2bdb25d2efb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default
+    second: {fileID: 2100000, guid: a91400245b0529244ba52e6df3003aa0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

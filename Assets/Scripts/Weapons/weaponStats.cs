@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class weaponStats : MonoBehaviour {
+public class WeaponStats : MonoBehaviour {
 
 	//https://www.youtube.com/watch?v=THnivyG0Mvo
 
@@ -13,18 +13,18 @@ public class weaponStats : MonoBehaviour {
 	
 	public string weaponName = "M1 Garand";
 	public int gunDamage = 65;
-	private int startingMagazine;
+	public int startingMagazine;
     public int maxMagazine = 8;
-    private int currentMagazine;
-	private int startingAmmo;
+    public int currentMagazine;
+	public int startingAmmo;
     public int maxAmmo = 32;
-    private int currentAmmo;
+    public int currentAmmo;
 	public int reloadSpeed = 3;
     public float fireRate = .2f;
     public float weaponRange = 100f;
     public float hitForce = 100f;
 	//public float switchSpeed = 0.25f;
-    private int bulletsRemaining;
+    public int bulletsRemaining;
     public bool isReloading;
     public bool isEmpty;
     public bool canFire;
@@ -189,6 +189,19 @@ public class weaponStats : MonoBehaviour {
         }
 
     }
+	
+	
+	public void getAmmo(int chance)
+	{
+		if (gameObject.tag == "M1Garand" || gameObject.tag == "M1A1Thompson")
+		{
+			float a;
+			int b;
+			a = currentAmmo + ((maxAmmo / 100) * chance);
+			b = Mathf.RoundToInt(a);
+			currentAmmo = currentAmmo + b;
+		}
+	}
 	
 	
 	//Reload player's weapon
