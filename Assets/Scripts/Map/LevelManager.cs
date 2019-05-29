@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
@@ -55,9 +56,13 @@ public class LevelManager : MonoBehaviour {
 	public bool FlakCannonsDone;
 	
 	private float startDelay = 1f;
+	public int objectiveReward = 500;
 	
 	Text objectiveText;
 	Text objAmountText;
+	Text scoreText;
+	public GameStaticController gameController;
+	
 	
 	void Awake()
 	{
@@ -77,6 +82,8 @@ public class LevelManager : MonoBehaviour {
 		
 		objectiveText = GameObject.Find("Canvas/ObjectiveText").GetComponent<Text>();
 		objAmountText = GameObject.Find("Canvas/objAmountText").GetComponent<Text>();
+		scoreText = GameObject.Find("Canvas/scoreText").GetComponent<Text>();
+		gameController = GameObject.Find("GameStaticController").GetComponent<GameStaticController>();
 		
 		defendAreaObjectiveActive = false;
 		KillSnipersObjectiveActive = false;
@@ -96,6 +103,8 @@ public class LevelManager : MonoBehaviour {
 		FlakCannonsAmount = 1;
 		FlakCannonsKilled = 0;
 		FlakCannonsDone = false;
+		
+		objectiveReward = objectiveReward * gameController.scoreMultiplier;
 		
 		area1 = Random.Range(1,4);
 		area2 = Random.Range(1,4);
@@ -200,6 +209,13 @@ public class LevelManager : MonoBehaviour {
 			objAmountText.text = "" + FlakCannonsKilled + " / " + FlakCannonsAmount;
 		}
 		
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			SceneManager.LoadScene("MainMenu");
+		}
+		
+		scoreText.text = "Score: " + gameController.GlobalScore;
+		
 	}
 	
 	
@@ -209,14 +225,17 @@ public class LevelManager : MonoBehaviour {
 		ObjectivesCompleted++;
 		if (ObjectivesCompleted == 1)
 		{
+			gameController.GlobalScore = gameController.GlobalScore + objectiveReward;
 			onArea1Complete();
 		}
 		if (ObjectivesCompleted == 2)
 		{
+			gameController.GlobalScore = gameController.GlobalScore + objectiveReward;
 			onArea2Complete();
 		}
 		if (ObjectivesCompleted == 3)
 		{
+			gameController.GlobalScore = gameController.GlobalScore + objectiveReward;
 			WinGame();
 		}
 	}
@@ -418,7 +437,11 @@ public class LevelManager : MonoBehaviour {
 		FlakCannonsObjectiveActive = false;
 		objectiveText.text = "YOU WON!";
 		objAmountText.text = "";
+		gameController.GlobalGameResult = "win";
 		Debug.Log("PLAYER WINS GAME");
+		Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+		SceneManager.LoadScene("Results");
 	}
 	
 	public void LoseGame(int loseCondition)
@@ -429,16 +452,22 @@ public class LevelManager : MonoBehaviour {
 		FlakCannonsObjectiveActive = false;
 		if (loseCondition == 1)
 		{
+			gameController.GlobalGameResult = "lost - defend";
 			Debug.Log("PLAYER LOST: FAILED TO DEFEND AREA");
 		}
 		if (loseCondition == 2)
 		{
+			gameController.GlobalGameResult = "lost - snipers";
 			Debug.Log("PLAYER LOST: FAILED TO KILL SNIPERS");
 		}
 		if (loseCondition == 3)
 		{
+			gameController.GlobalGameResult = "lost - flak";
 			Debug.Log("PLAYER LOST: FAILED TO DESTROY FLAK CANNONS");
 		}
+		Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+		SceneManager.LoadScene("Results");
 	}
 	
 }

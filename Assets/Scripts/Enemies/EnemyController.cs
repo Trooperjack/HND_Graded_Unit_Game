@@ -43,6 +43,9 @@ public class EnemyController : MonoBehaviour {
 	PlayerController player;
 	NavMeshAgent nav;
 	
+	public GameStaticController gameController;
+	
+	
 	void Awake () {
 		
 		LevelManagerObject = GameObject.FindGameObjectWithTag("Level Manager");
@@ -52,11 +55,24 @@ public class EnemyController : MonoBehaviour {
 		player = playerTransform.GetComponent<PlayerController>();
 		nav = GetComponent<NavMeshAgent>();
 		
+		gameController = GameObject.Find("GameStaticController").GetComponent<GameStaticController>();
+		
 		//triggerTarget = GameObject.FindGameObjectWithTag("Trigger Target").transform;
 		
+		float a;
+		int b;
+		a = ((startingHealth / 100) * gameController.enemyModifier);
+		b = Mathf.RoundToInt(a);
+		
+		float c;
+		int d;
+		c = ((damage / 100) * gameController.enemyModifier);
+		d = Mathf.RoundToInt(c);
+		
 		isDead = false;
-        currentHealth = startingHealth;
+        currentHealth = startingHealth + b;
         currentMagazine = startingMagazine;
+		damage = damage + d;
 		
 	}
 	

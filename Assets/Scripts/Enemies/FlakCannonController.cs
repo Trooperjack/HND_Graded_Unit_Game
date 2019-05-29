@@ -20,6 +20,7 @@ public class FlakCannonController : MonoBehaviour {
         if (currentHealth <= 0)
         {
 			lvlman.FlakCannonsKilled++;
+			//lvlman.gameController.GlobalScore = lvlman.gameController.GlobalScore + 500;
             Destroy(gameObject);
         }
     }

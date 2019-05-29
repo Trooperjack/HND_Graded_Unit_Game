@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour {
 		//Damaged
 		if (other.gameObject.CompareTag("Projectile") && !isDead)
 		{
-			Debug.Log("IS HIT");
+			//Debug.Log("IS HIT");
 		}
 	}
 	

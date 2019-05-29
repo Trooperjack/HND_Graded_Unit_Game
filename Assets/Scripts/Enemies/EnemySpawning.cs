@@ -29,12 +29,17 @@ public class EnemySpawning : MonoBehaviour {
 	public bool ifSpawningB;
 	public bool ifSpawningC;
 	
+	public GameStaticController gameController;
+	
 	
 	void Start () {
+		
+		gameController = GameObject.Find("GameStaticController").GetComponent<GameStaticController>();
+		
 		snipersCompleted = false;
 		snipersActive = false;
 		sniperDeaths = 0;
-		enemyCap = 10;
+		enemyCap = 10 + gameController.extraEnemies;
 		sniperCap = 1;
 		ifSnipersA = false;
 		ifSnipersB = false;

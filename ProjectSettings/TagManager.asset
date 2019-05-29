@@ -35,6 +35,8 @@ TagManager:
   - DefendArea1
   - DefendArea2
   - DefendArea3
+  - WinPanel
+  - LosePanel
   layers:
   - Default
   - TransparentFX
