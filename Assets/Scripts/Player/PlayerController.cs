@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    //https://www.mvcode.com/lessons/first-person-camera-and-controller-jamie
-    //https://unity3d.com/learn/tutorials/projects/lets-try-assignments/lets-try-shooting-raycasts-article
-
+	public GameStaticController gameController;
+	
     //Public variables
     public float walkSpeed;
     
@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
 
+		gameController = GameObject.Find("GameStaticController").GetComponent<GameStaticController>();
+		
 		wep1 = GameObject.FindGameObjectWithTag("M1Garand");
 		wep2 = GameObject.FindGameObjectWithTag("M1A1Thompson");
 		wep3 = GameObject.FindGameObjectWithTag("Panzerschreck");
@@ -251,6 +253,21 @@ public class PlayerController : MonoBehaviour {
 			if (currentHealth <= 0)
 			{
 				isDead = true;
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+				gameController.gameMusic.Stop();
+				gameController.gameMusic.loop = true;
+				gameController.gameMusic.clip = gameController.menuFile;
+				gameController.gameMusic.volume = 0.8f;
+				gameController.gameMusic.Play();
+				gameController.gamesLost++;
+				PlayerPrefs.SetInt("gamesLost", gameController.gamesLost);
+				if (gameController.GlobalScore > gameController.highScore);
+				{
+					PlayerPrefs.SetInt("highScore", gameController.GlobalScore);
+				}
+				gameController.GlobalGameResult = "lost - death";
+				SceneManager.LoadScene("Results");
 			}
 		}
 

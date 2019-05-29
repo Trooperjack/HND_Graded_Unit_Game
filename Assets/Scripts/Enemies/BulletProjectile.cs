@@ -10,6 +10,9 @@ public class BulletProjectile : MonoBehaviour {
 	public GameObject player;
 	PlayerController playerScript;
 	
+	public AudioSource bulletSound;
+	public AudioClip impactClip;
+	
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -35,6 +38,7 @@ public class BulletProjectile : MonoBehaviour {
 				playerScript.onDamaged(damage);
 			}
 		}
+		AudioSource.PlayClipAtPoint(impactClip, gameObject.transform.position);
 		Destroy(gameObject);
 	}
 	

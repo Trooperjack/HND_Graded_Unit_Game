@@ -45,6 +45,9 @@ public class EnemyController : MonoBehaviour {
 	
 	public GameStaticController gameController;
 	
+	public AudioSource gunSound;
+	public AudioClip gunClip;
+	
 	
 	void Awake () {
 		
@@ -138,6 +141,7 @@ public class EnemyController : MonoBehaviour {
 			GameObject bullet = Instantiate(projectile, transform.position + transform.forward * 2, Quaternion.identity) as GameObject;
 			Physics.IgnoreCollision(gameObject.GetComponent<CapsuleCollider>(),bullet.GetComponent<SphereCollider>());
 			BulletProjectile bulletScript = bullet.GetComponent<BulletProjectile>();
+			AudioSource.PlayClipAtPoint(gunClip, transform.position);
 			if (bulletScript != null)
 			{
 				bulletScript.setDamage(damage);
@@ -162,6 +166,8 @@ public class EnemyController : MonoBehaviour {
         if (currentHealth <= 0)
         {
 			isDead = true;
+			gameController.GlobalScore = gameController.GlobalScore + score;
+			PlayerPrefs.SetInt("totalKills", gameController.totalKills++);
 			randomPickup();
 			Destroy(gameObject);
         }

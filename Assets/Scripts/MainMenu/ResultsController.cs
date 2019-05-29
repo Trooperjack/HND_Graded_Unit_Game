@@ -44,6 +44,11 @@ public class ResultsController : MonoBehaviour {
 			losePanel.SetActive(true);
 			resultText.text = "The Flak 88 Cannons has managed to blow out key structure points of Itter Castle to allow the main force to easily assault and take control of Itter Castle and wiped out any remaining resistance defending Itter Castle. " + gameController.playerName + " has failed to defend the Castle and in turn, has caused a time paradox and will never return home.";
 		}
+		if(gameController.GlobalGameResult == "lost - death")
+		{
+			losePanel.SetActive(true);
+			resultText.text = "Too injured to continue fighting, " + gameController.playerName + " has failed to defend the Castle and in turn, has caused a time paradox and will never return home.";
+		}
 		
 		scoreText.text = "Score: " + gameController.GlobalScore;
 	}

@@ -105,6 +105,7 @@ public class LevelManager : MonoBehaviour {
 		FlakCannonsDone = false;
 		
 		objectiveReward = objectiveReward * gameController.scoreMultiplier;
+		gameController.GlobalScore = 0;
 		
 		area1 = Random.Range(1,4);
 		area2 = Random.Range(1,4);
@@ -112,6 +113,12 @@ public class LevelManager : MonoBehaviour {
 		
 		objectiveText.text = "";
 		objAmountText.text = "";
+		
+		gameController.gameMusic.Stop();
+		gameController.gameMusic.loop = true;
+		gameController.gameMusic.clip = gameController.gameFile;
+		gameController.gameMusic.volume = 0.8f;
+		gameController.gameMusic.Play();
 	}
 	
 	
@@ -441,6 +448,17 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log("PLAYER WINS GAME");
 		Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+		gameController.gameMusic.Stop();
+		gameController.gameMusic.loop = true;
+		gameController.gameMusic.clip = gameController.menuFile;
+		gameController.gameMusic.volume = 0.8f;
+		gameController.gameMusic.Play();
+		gameController.gamesWon++;
+		PlayerPrefs.SetInt("gamesWon", gameController.gamesWon);
+		if (gameController.GlobalScore > gameController.highScore);
+		{
+			PlayerPrefs.SetInt("highScore", gameController.GlobalScore);
+		}
 		SceneManager.LoadScene("Results");
 	}
 	
@@ -467,6 +485,17 @@ public class LevelManager : MonoBehaviour {
 		}
 		Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+		gameController.gameMusic.Stop();
+		gameController.gameMusic.loop = true;
+		gameController.gameMusic.clip = gameController.menuFile;
+		gameController.gameMusic.volume = 0.8f;
+		gameController.gameMusic.Play();
+		gameController.gamesLost++;
+		PlayerPrefs.SetInt("gamesLost", gameController.gamesLost);
+		if (gameController.GlobalScore > gameController.highScore);
+		{
+			PlayerPrefs.SetInt("highScore", gameController.GlobalScore);
+		}
 		SceneManager.LoadScene("Results");
 	}
 	

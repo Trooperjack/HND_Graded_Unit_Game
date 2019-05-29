@@ -42,6 +42,11 @@ public class WeaponStats : MonoBehaviour {
     Text reloadText;
 	Text weaponText;
 	
+	public GameObject ImpactShot;
+	public AudioSource gunSound;
+	public AudioClip gunClip;
+	public AudioClip impactClip;
+	
 	void Awake()
 	{
 		cam = Camera.main;
@@ -127,6 +132,7 @@ public class WeaponStats : MonoBehaviour {
 
             RaycastHit hit;
             bulletLine.SetPosition(0, gunTip.transform.position);
+			AudioSource.PlayClipAtPoint(gunClip, gunTip.transform.position);
 
             if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, weaponRange))
             {
@@ -135,6 +141,9 @@ public class WeaponStats : MonoBehaviour {
 				EnemyController enemyHealth = hit.collider.GetComponent<EnemyController>();
 				EnemySniperController enemySniperHealth = hit.collider.GetComponent<EnemySniperController>();
 				FlakCannonController flakCannonHealth = hit.collider.GetComponent<FlakCannonController>();
+				GameObject impactHit = Instantiate(ImpactShot, hit.point, Quaternion.identity) as GameObject;
+				Destroy(impactHit, 1f);
+				AudioSource.PlayClipAtPoint(impactClip, hit.point);
 				
                 if (health != null)
                 {
